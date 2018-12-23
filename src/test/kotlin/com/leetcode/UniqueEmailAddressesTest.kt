@@ -11,4 +11,11 @@ internal class UniqueEmailAddressesTest {
     val inputEmailsArray = arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com")
     Assertions.assertEquals(2, solution.numUniqueEmails(inputEmailsArray))
   }
+
+  @Test
+  fun `base input from leetcode for char by char solution`() {
+    val solution = UniqueEmailAddresses.Solution()
+    val inputEmailsArray = arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com")
+    Assertions.assertEquals(2, solution.charByCharSolutions(inputEmailsArray))
+  }
 }
