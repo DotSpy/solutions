@@ -28,4 +28,12 @@ internal class MoveZeroesTest {
     solution.moveZeroes(array)
     Assertions.assertArrayEquals(intArrayOf(1, 0, 0), array)
   }
+
+  @Test
+  fun `leetcode example runtime input3`() {
+    val solution = MoveZeroes.Solution()
+    val array = intArrayOf(1)
+    solution.moveZeroes(array)
+    Assertions.assertArrayEquals(intArrayOf(1), array)
+  }
 }
