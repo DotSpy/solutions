@@ -22,6 +22,7 @@ internal class MajorityEmentTest {
         Arguments.arguments(intArrayOf(3, 2, 3), 3),
         Arguments.arguments(intArrayOf(2, 2, 1, 1, 1, 2, 2), 2),
         Arguments.arguments(intArrayOf(8, 8, 7, 7, 7), 7),
+        Arguments.arguments(intArrayOf(10, 9, 9, 9, 10), 9),
         Arguments.arguments(intArrayOf(5), 5))
   }
 }
