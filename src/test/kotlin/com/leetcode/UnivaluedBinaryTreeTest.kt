@@ -1,5 +1,6 @@
 package com.leetcode
 
+import com.leetcode.model.TreeNode
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
