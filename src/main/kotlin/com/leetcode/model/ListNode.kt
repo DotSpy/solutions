@@ -11,9 +11,7 @@ class ListNode(var `val`: Int) {
     other as ListNode
 
     if (`val` != other.`val`) return false
-    if (next != other.next) return false
-
-    return true
+    return next == other.next
   }
 
   override fun hashCode(): Int {
@@ -21,4 +19,9 @@ class ListNode(var `val`: Int) {
     result = 31 * result + (next?.hashCode() ?: 0)
     return result
   }
+
+  override fun toString(): String {
+    return "ListNode(`val`=$`val`, next=$next)"
+  }
+
 }
