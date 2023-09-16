@@ -3,26 +3,14 @@ package com.leetcode
 class RemoveElement {
     class Solution {
         fun removeElement(nums: IntArray, `val`: Int): Int {
-            var j = nums.lastIndex
-            var i = 0
-            while (i < j) {
-                if (nums[i] == `val`) {
-                    while (j < nums.size) {
-                        if (nums[j] != `val`) {
-                            nums[i] = nums[j]
-                            nums[j] = `val`
-                            j--
-                            break
-                        }
-                        j--
-                    }
-                    if (j <= i) {
-                        break
-                    }
+            var include = 0
+            for (i in nums.indices) {
+                if (nums[i] != `val`) {
+                    nums[include] = nums[i]
+                    include++
                 }
-                i++
             }
-            return i + 1
+            return include
         }
     }
 }
