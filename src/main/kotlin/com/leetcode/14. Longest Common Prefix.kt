@@ -1,5 +1,7 @@
 package com.leetcode
 
+import java.util.Arrays
+
 /*
 Write a function to find the longest common prefix string amongst an array of strings.
 
@@ -32,15 +34,9 @@ class LongestCommonPrefix {
     class Solution {
         fun longestCommonPrefix(strs: Array<String>): String {
             var commonPrefix = ""
-            var match = true
+            Arrays.sort(strs)
             for (i in strs[0].indices) {
-                for (j in 0 until strs.lastIndex) {
-                    if (i > strs[j + 1].lastIndex || strs[j][i] != strs[j + 1][i]) {
-                        match = false
-                        break
-                    }
-                }
-                if (match) {
+                if (strs[0][i] == strs.last()[i]) {
                     commonPrefix += strs[0][i]
                 } else {
                     break
