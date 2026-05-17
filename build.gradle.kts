@@ -1,8 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-  kotlin("jvm") version "1.9.10"
+  alias(libs.plugins.kotlinJvm)
   application
+}
+
+kotlin {
+  jvmToolchain(17)
 }
 
 repositories {
@@ -10,13 +12,13 @@ repositories {
 }
 
 dependencies {
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
-  testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+  testImplementation(kotlin("test"))
+  testImplementation(libs.org.junit.jupiter.junit.jupiter.api)
+  testImplementation(libs.org.junit.jupiter.junit.jupiter.params)
+  testRuntimeOnly(libs.org.junit.jupiter.junit.jupiter.engine)
+  testRuntimeOnly(libs.org.junit.platform.junit.platform.launcher)
 }
 
-tasks.withType<Test> {
-  testLogging.showStackTraces = true
-  testLogging.exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+tasks.test {
   useJUnitPlatform()
 }
